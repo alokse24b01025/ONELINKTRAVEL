@@ -1,0 +1,21 @@
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500&family=Work+Sans:wght@400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-manrope: 'Manrope', sans-serif;
+  --font-worksans: 'Work Sans', sans-serif;
+}
+
+body {
+  /* Matching the blue-purple-pink aesthetic from your screenshot */
+  background: linear-gradient(135deg, #fce7f3 0%, #e0e7ff 40%, #818cf8 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
