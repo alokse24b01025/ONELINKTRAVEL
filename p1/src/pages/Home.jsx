@@ -101,40 +101,41 @@ const Home = () => {
 
 
 
-
-{/* 2. SECÇÃO DE PAÍSES */}
-<section className="py-24 px-6 md:px-20 bg-gradient-to-br from-[#f8c1cc] via-[#b4c6ef] to-[#7195e0] relative overflow-hidden">
-  <div className="text-center mb-16 relative z-10">
+{/* 2. SECÇÃO DE PAÍSES - VERSÃO PEQUENA E ESTILIZADA */}
+<section className="py-12 px-6 md:px-20 bg-gradient-to-br from-[#f8c1cc] via-[#b4c6ef] to-[#7195e0] min-h-screen flex flex-col justify-center overflow-hidden">
+  
+  <div className="text-center mb-10 relative z-10">
     <p 
-      className="text-[12px] font-normal tracking-tight text-gray-800 mb-2 uppercase" 
+      className="text-[11px] font-normal tracking-tight text-gray-700 mb-1" 
       style={{ fontFamily: 'var(--font-worksans)' }}
     >
-      Países que pode visitar
+      Países para onde o ajudamos a emigrar
     </p>
     <h2 
-      className="text-3xl md:text-5xl font-medium text-[#1e293b] max-w-2xl mx-auto leading-tight px-4" 
+      className="text-2xl md:text-[40px] font-medium text-[#1e293b] max-w-2xl mx-auto leading-tight px-4" 
       style={{ fontFamily: 'var(--font-manrope)' }}
     >
-      Países que apoiamos para a imigração
+      Países com apoio completo para imigração
     </h2>
   </div>
 
-  <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-10 relative z-10">
+  {/* Grid ultra-compacta */}
+  <div className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-6 relative z-10">
     {[
-      { name: "PORTUGAL", desc: "Informação geral sobre Portugal", img: "/portugal.jpg" },
-      { name: "ALEMANHA", desc: "Informação geral sobre a Alemanha", img: "/germany.jpg" },
-      { name: "POLÓNIA", desc: "Informação geral sobre a Polónia", img: "/poland.jpg" },
-      { name: "REPÚBLICA CHECA", desc: "Informação geral sobre a República Checa", img: "/czech.jpg" },
-      { name: "GEÓRGIA", desc: "Informação geral sobre a Geórgia", img: "/georgia.jpg" },
-      { name: "TURQUIA", desc: "Informação geral sobre a Turquia", img: "/turkey.jpg" },
+      { name: "PORTUGAL", desc: "Residência e trabalho na Europa", img: "/portugal.jpg" },
+      { name: "ALEMANHA", desc: "Grandes oportunidades profissionais seguras", img: "/germany.jpg" },
+      { name: "POLÓNIA", desc: "Mercado em crescimento na Europa", img: "/poland.jpg" },
+      { name: "REPÚBLICA CHECA", desc: "Qualidade de vida e estabilidade", img: "/czech.jpg" },
+      { name: "GEÓRGIA", desc: "Processos simples e rápidos", img: "/georgia.jpg" },
+      { name: "TURQUIA", desc: "Oportunidades estratégicas de residência", img: "/turkey.jpg" },
     ].map((country, index) => (
       <div 
         key={index} 
-        className="bg-white/95 backdrop-blur-sm rounded-[50px] p-8 border border-white/40 shadow-sm flex flex-col items-center transition-all hover:shadow-md mx-auto w-full max-w-[350px] sm:max-w-none"
+        className="bg-white/95 backdrop-blur-sm rounded-[35px] border border-white/40 shadow-sm flex flex-col items-center justify-center transition-all hover:shadow-md mx-auto w-full h-[180px] max-w-[260px]"
       >
-        {/* Header: Flag and Name Side-by-Side */}
-        <div className="flex items-center justify-center gap-4 w-full mb-4">
-          <div className="w-12 h-12 overflow-hidden rounded-full shadow-inner border border-gray-100 flex-shrink-0">
+        {/* Header Compacto */}
+        <div className="flex items-center justify-center gap-3 w-full mb-3 px-4">
+          <div className="w-10 h-10 overflow-hidden rounded-full shadow-inner border border-gray-100 flex-shrink-0">
             <img 
               src={country.img} 
               alt={country.name} 
@@ -142,19 +143,19 @@ const Home = () => {
             />
           </div>
           <h3 
-            className="text-[14px] md:text-[15px] font-medium tracking-widest text-black" 
+            className="text-[12px] font-bold tracking-[0.05em] text-black" 
             style={{ fontFamily: 'var(--font-manrope)' }}
           >
             {country.name}
           </h3>
         </div>
 
-        {/* Dashed Line separator */}
-        <div className="w-full border-t border-dashed border-gray-400 my-2"></div>
+        {/* Linha Tracejada Fina */}
+        <div className="w-[75%] border-t-[1px] border-dashed border-gray-300 opacity-60 my-1"></div>
 
-        {/* Description */}
+        {/* Descrição Compacta */}
         <p 
-          className="text-gray-700 text-[13px] mt-4 leading-relaxed text-center px-2" 
+          className="text-gray-800 text-[11px] mt-3 leading-snug text-center px-5 font-medium" 
           style={{ fontFamily: 'var(--font-worksans)' }}
         >
           {country.desc}
@@ -165,57 +166,35 @@ const Home = () => {
 </section>
 
 
-{/* SECÇÃO 3: SERVIÇOS */}
-<section id="services" className="py-16 md:py-24 px-6 md:px-20 bg-transparent scroll-mt-20">
-  <div className="text-center mb-16">
+{/* SECÇÃO 3: SERVIÇOS - VERSÃO ULTRA-COMPACTA */}
+<section id="services" className="py-12 md:py-16 px-6 md:px-20 bg-transparent scroll-mt-20">
+  <div className="text-center mb-10">
     <p className="text-[10px] font-bold tracking-[0.3em] uppercase text-gray-400 mb-4" style={{ fontFamily: 'var(--font-worksans)' }}>
       Serviços
     </p>
-    <h2 className="text-3xl md:text-5xl font-normal text-gray-900 mb-8 px-4" style={{ fontFamily: 'var(--font-manrope)' }}>
+    <h2 className="text-2xl md:text-[34px] font-medium text-gray-900 mb-6 px-4" style={{ fontFamily: 'var(--font-manrope)' }}>
       Soluções de vistos para todos os caminhos
     </h2>
-
-    {/* RESPONSIVE BUTTONS */}
-    <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-16">
-      <button 
-        onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-        className="w-full sm:w-auto bg-white border border-black text-black px-8 py-3 rounded-full text-sm font-medium hover:bg-black hover:text-white transition-all shadow-sm"
-        style={{ fontFamily: 'var(--font-worksans)' }}
-      >
-        Explorar serviços
-      </button>
-      <button 
-        onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-        className="flex items-center gap-2 text-sm font-medium text-black hover:opacity-60 transition-all"
-        style={{ fontFamily: 'var(--font-worksans)' }}
-      >
-        Contacte-nos
-        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-          <path d="M9 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      </button>
-    </div>
   </div>
 
-  {/* Services Grid with Expansion Logic */}
-  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
     {[
       { 
         title: "Visto de Trabalho", 
-        desc: "Priorizamos uma comunicação clara e apoio contínuo durante toda a sua jornada profissional.", 
-        more: "Tratamos de certificações laborais e entrevistas consulares para garantir uma transição sem falhas. A nossa equipa oferece suporte de ponta a ponta.",
+        desc: "Priorizamos uma comunicação clara e apoio contínuo na sua jornada profissional.", 
+        more: "Tratamos de certificações laborais e entrevistas consulares para uma transição sem falhas.",
         img: "/service-work.jpg" 
       },
       { 
         title: "Visto de Turismo", 
         desc: "Minimize a burocracia e maximize as suas chances de aprovação com sucesso.", 
-        more: "Desde o planeamento do itinerário até ao processamento rápido da candidatura, tratamos de todos os detalhes para que se foque na sua viagem.",
+        more: "Desde o planeamento do itinerário até ao processamento rápido da candidatura.",
         img: "/service-tourist.jpg" 
       },
       { 
         title: "Visto de Estudante", 
         desc: "Navegue por requisitos internacionais complexos com total confiança.", 
-        more: "Os nossos especialistas auxiliam com comprovativos de matrícula e documentação financeira necessária, garantindo que cumpre todos os critérios globais.",
+        more: "Auxiliamos com comprovativos de matrícula e documentação financeira necessária.",
         img: "/service-student.jpg" 
       }
     ].map((service, i) => {
@@ -224,34 +203,40 @@ const Home = () => {
       return (
         <div 
           key={i} 
-          className="bg-white/80 backdrop-blur-md rounded-[3.5rem] p-4 shadow-sm border border-white flex flex-col h-[600px] md:h-[650px] overflow-hidden transition-all duration-500 hover:-translate-y-2 mx-auto w-full max-w-[400px] md:max-w-none"
+          className="bg-white/80 backdrop-blur-md rounded-[2rem] shadow-sm border border-white flex flex-col h-[440px] overflow-hidden transition-all duration-500 hover:-translate-y-1 mx-auto w-full max-w-[310px]"
         >
-          <div className="p-8 md:p-10 pb-4 flex flex-col min-h-[220px] transition-all duration-500">
-            <h3 className="text-2xl md:text-3xl font-normal mb-4 text-black" style={{ fontFamily: 'var(--font-manrope)' }}>
+          {/* Área de Conteúdo Ultra-Compacta */}
+          <div className="p-6 pb-2 flex flex-col flex-none">
+            <h3 className="text-lg md:text-xl font-bold mb-2 text-black" style={{ fontFamily: 'var(--font-manrope)' }}>
               {service.title}
             </h3>
             
-            <div className="text-gray-400 text-[13px] leading-relaxed" style={{ fontFamily: 'var(--font-worksans)' }}>
-              <p>{service.desc}</p>
+            <div className="text-gray-500 text-[11px] leading-relaxed" style={{ fontFamily: 'var(--font-worksans)' }}>
+              <p className="text-black/70">{service.desc}</p>
               
-              <div className={`overflow-hidden transition-all duration-500 ease-in-out ${isExpanded ? 'max-h-40 opacity-100 mt-3' : 'max-h-0 opacity-0'}`}>
-                <p className="text-gray-500 italic">{service.more}</p>
+              <div className={`overflow-hidden transition-all duration-500 ease-in-out ${isExpanded ? 'max-h-20 opacity-100 mt-2' : 'max-h-0 opacity-0'}`}>
+                <p className="text-gray-400 italic border-l border-black/10 pl-3">
+                  {service.more}
+                </p>
               </div>
 
               <button 
                 onClick={() => setIsExpanded(!isExpanded)}
-                className="mt-4 block text-[11px] font-bold border-b border-black pb-0.5 tracking-widest uppercase hover:text-blue-600 hover:border-blue-600 transition-all"
+                className="mt-3 flex items-center gap-1 text-[9px] font-bold tracking-[0.1em] uppercase hover:text-black transition-all mb-1"
               >
-                {isExpanded ? 'Ver menos ↑' : 'Ler mais →'}
+                <span className="border-b border-black/20 pb-0.5">
+                  {isExpanded ? 'Ver menos ↑' : 'Ler mais →'}
+                </span>
               </button>
             </div>
           </div>
           
-          <div className="flex-grow w-full px-2 pb-2 mt-auto min-h-0 transition-all duration-500">
+          {/* Imagem - Toca o botão e preenche o resto do div */}
+          <div className="relative flex-grow w-full overflow-hidden transition-all duration-500 ease-in-out">
              <img 
                src={service.img} 
                alt={service.title}
-               className="w-full h-full object-cover rounded-[2.8rem] transition-all duration-500" 
+               className="absolute inset-0 w-full h-full object-cover" 
              />
           </div>
         </div>

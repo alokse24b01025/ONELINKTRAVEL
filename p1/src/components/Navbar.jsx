@@ -3,13 +3,12 @@ import React, { useState } from 'react';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  // Função para rolagem suave até às secções
   const scrollToSection = (e, id) => {
     e.preventDefault();
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
-      setIsOpen(false); // Fecha o menu mobile ao clicar
+      setIsOpen(false);
     }
   };
 
@@ -27,7 +26,7 @@ const Navbar = () => {
         </div>
       </div>
       
-      {/* NAVEGAÇÃO DESKTOP - Apenas os 4 links originais */}
+      {/* NAVEGAÇÃO DESKTOP */}
       <div 
         className="hidden md:flex items-center gap-8 text-[15px] font-semibold text-gray-900"
         style={{ fontFamily: 'var(--font-worksans)' }}
@@ -48,32 +47,37 @@ const Navbar = () => {
 
       {/* BOTÃO MOBILE (Hambúrguer) */}
       <button 
-        className="md:hidden p-2 text-gray-900 relative z-[120]"
+        className="md:hidden p-3 bg-white/80 backdrop-blur-xl rounded-full border border-pink-200 shadow-sm relative z-[120] active:scale-90 transition-transform"
         onClick={() => setIsOpen(!isOpen)}
-        aria-label="Abrir Menu"
+        aria-label="Menu"
       >
-        <div className="flex flex-col gap-1.5 w-6">
-          <span className={`h-0.5 w-full bg-black transition-all duration-300 ${isOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
-          <span className={`h-0.5 w-full bg-black transition-all duration-300 ${isOpen ? 'opacity-0' : ''}`}></span>
-          <span className={`h-0.5 w-full bg-black transition-all duration-300 ${isOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+        <div className="flex flex-col gap-1 w-5">
+          <span className={`h-0.5 w-full bg-gradient-to-r from-pink-500 to-blue-500 transition-all duration-300 ${isOpen ? 'rotate-45 translate-y-1.5' : ''}`}></span>
+          <span className={`h-0.5 w-full bg-gradient-to-r from-pink-500 to-blue-500 transition-all duration-300 ${isOpen ? 'opacity-0' : ''}`}></span>
+          <span className={`h-0.5 w-full bg-gradient-to-r from-pink-500 to-blue-500 transition-all duration-300 ${isOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></span>
         </div>
       </button>
 
       {/* OVERLAY */}
       {isOpen && (
-        <div className="fixed inset-0 bg-black/20 backdrop-blur-sm z-[110] md:hidden" onClick={() => setIsOpen(false)} />
+        <div className="fixed inset-0 bg-black/5 backdrop-blur-[1px] z-[110] md:hidden" onClick={() => setIsOpen(false)} />
       )}
 
-      {/* MENU LATERAL - Apenas os 4 links originais */}
-      <div className={`fixed top-0 right-0 w-[70%] sm:w-64 h-screen bg-white/60 backdrop-blur-3xl border-l border-white/40 shadow-2xl transition-transform duration-500 ease-in-out z-[115] pt-24 px-8 md:hidden ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+      {/* MENU MOBILE - TEMA ROSA/AZUL, MAIS ALTO E MAIS ESTREITO */}
+      <div className={`fixed top-20 right-4 w-40 bg-gradient-to-b from-white/95 to-pink-50/90 backdrop-blur-3xl border border-white/50 rounded-[2.5rem] shadow-xl transition-all duration-400 ease-[cubic-bezier(0.23,1,0.32,1)] z-[115] py-10 px-4 md:hidden ${isOpen ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 -translate-y-8 scale-90 pointer-events-none'}`}>
         <div 
-          className="flex flex-col gap-8 text-[18px] font-medium text-gray-900"
+          className="flex flex-col gap-8 text-[12px] font-bold text-gray-800 uppercase tracking-[0.2em] text-center"
           style={{ fontFamily: 'var(--font-worksans)' }}
         >
-          <a href="#home" onClick={(e) => scrollToSection(e, 'home')} className="hover:translate-x-2 transition-transform">Início</a>
-          <a href="#services" onClick={(e) => scrollToSection(e, 'services')} className="hover:translate-x-2 transition-transform">Serviços</a>
-          <a href="#visas" onClick={(e) => scrollToSection(e, 'services')} className="hover:translate-x-2 transition-transform">Vistos</a>
-          <a href="#about" onClick={(e) => scrollToSection(e, 'team')} className="hover:translate-x-2 transition-transform">Sobre nós</a>
+          <a href="#home" onClick={(e) => scrollToSection(e, 'home')} className="hover:text-pink-500 transition-colors">Início</a>
+          <a href="#services" onClick={(e) => scrollToSection(e, 'services')} className="hover:text-blue-500 transition-colors">Serviços</a>
+          <a href="#visas" onClick={(e) => scrollToSection(e, 'services')} className="hover:text-pink-500 transition-colors">Vistos</a>
+          <a href="#about" onClick={(e) => scrollToSection(e, 'team')} className="hover:text-blue-500 transition-colors">Sobre nós</a>
+        </div>
+        
+        {/* Detalhe Decorativo Inferior */}
+        <div className="mt-8 flex justify-center">
+          <div className="w-8 h-1 bg-gradient-to-r from-pink-300 to-blue-300 rounded-full opacity-50"></div>
         </div>
       </div>
     </nav>
